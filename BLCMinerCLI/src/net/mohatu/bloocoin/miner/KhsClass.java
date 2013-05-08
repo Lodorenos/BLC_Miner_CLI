@@ -30,7 +30,7 @@ public class KhsClass implements Runnable {
 				oldAmount = MainView.getCounter();
 				Thread.sleep(5000);
 				newAmount = MainView.getCounter();
-				MainView.updateKhs((double)(newAmount - oldAmount) / 1000);
+				MainView.updateKhs((double)(newAmount - oldAmount) / 5000);
 				convertTime(System.nanoTime() - MainView.getStartTime());
 				MainView.setTime(hour, minute, second);
 				if(!MainView.getStatus()){
