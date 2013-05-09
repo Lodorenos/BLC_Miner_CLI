@@ -39,6 +39,7 @@ public class MainView {
 	private static int threads = 5;
 	private static boolean showHelp = true;
 	private static double khs;
+	private static String hourString, minuteString, secondString;
 
 	/**
 	 * Launch the application.
@@ -56,7 +57,7 @@ public class MainView {
 			displayHelp();
 			mainLoop();
 		case "mine":
-			if (isMining == false) {
+			if (!isMining) {
 				isMining = true;
 				startTime = System.nanoTime();
 				Thread miner = new Thread(new MinerHandler());
@@ -129,7 +130,7 @@ public class MainView {
 	}
 
 	public static void setTime(int hour, int minute, int second) {
-		String hourString, minuteString, secondString;
+		
 		hourString = Integer.toString(hour);
 		minuteString = Integer.toString(minute);
 		secondString = Integer.toString(second);
@@ -146,7 +147,7 @@ public class MainView {
 		}
 		System.out.print("\r                                               ");
 		System.out.print("\r" + hourString + ":" + minuteString + ":"
-				+ secondString + "\tTried: " + counter + "\tKh/s: "+khs + "\tSolved:"+solved+"\n");
+				+ secondString + "\tTried: " + counter + "\tKh/s: "+khs + "\tSolved: "+solved+"\n");
 	}
 
 	public static void updateSolved(String solution) {
@@ -208,6 +209,18 @@ public class MainView {
 
 	public static void loadDataPub() {
 		loadData();
+	}
+	
+	public static String getHours(){
+		return hourString;
+	}
+	
+	public static String getMinutes(){
+		return minuteString;
+	}
+	
+	public static String getSeconds(){
+		return secondString;
 	}
 
 	private static void loadData() {
