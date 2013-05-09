@@ -62,9 +62,9 @@ public class CoinClass implements Runnable {
 			MainView.updateBLC(Integer.parseInt(coins));
 
 		} catch (MalformedURLException murle) {
-			murle.printStackTrace();
+			System.out.println("The URL seems to be malformed.");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("There seems to be a problem connecting. Server down?");
 		}
 		getTotal();
 	}
@@ -98,9 +98,9 @@ public class CoinClass implements Runnable {
 			
 
 		} catch (MalformedURLException murle) {
-			murle.printStackTrace();
+			System.out.println("The URL seems to be malformed.");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("There seems to be a problem connecting. Server down?");
 		}
 	}
 

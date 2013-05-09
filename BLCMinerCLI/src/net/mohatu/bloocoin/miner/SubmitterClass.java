@@ -93,11 +93,9 @@ public class SubmitterClass implements Runnable {
 						+ " failed, already exists!");
 			}
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
 			MainView.updateStatusText("Submission of " + solution
-					+ " failed, connection failed!");
+					+ " failed, unknown host!");
 		} catch (IOException e) {
-			e.printStackTrace();
 			MainView.updateStatusText("Submission of " + solution
 					+ " failed, connection failed!");
 		}

@@ -70,6 +70,10 @@ public class MainView {
 			}
 			mainLoop();
 			break;
+		case "beautiful":
+			System.out.println("Martha Kate <3");
+		case "genius":
+			System.out.println("Mohatu");
 		case "exit":
 			System.exit(0);
 			break;

@@ -83,13 +83,13 @@ public class RegisterClass implements Runnable {
 				saveBloostamp();
 			} else if (result.contains("\"success\": false")) {
 				System.out.println("Result: Failed");
-				MainView.updateStatusText("Registration failed. Check your network connection");
+				MainView.updateStatusText("Registration failed. ");
 				System.exit(0);
 			}
 		} catch (UnknownHostException e) {
-			e.printStackTrace();
+			System.out.println("Error: Unknown host.");
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Error: Network error.");
 		}
 	}
 	
@@ -114,8 +114,7 @@ public class RegisterClass implements Runnable {
 		MainView.loadDataPub();
 
 		}catch(IOException e){
-			System.out.println("Saving failed:");
-			e.printStackTrace();
+			System.out.println("Saving of bloostamp file failed, check permissions.");
 		}
 	}
 }
