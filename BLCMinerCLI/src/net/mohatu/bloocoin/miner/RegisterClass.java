@@ -77,6 +77,7 @@ public class RegisterClass implements Runnable {
 			is.close();
 			os.close();
 			sock.close();
+			System.out.println(result);
 			if (result.contains("\"success\": true")) {
 				System.out.println("Registration successful: "+addr);
 				saveBloostamp();

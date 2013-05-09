@@ -93,7 +93,6 @@ public class CoinClass implements Runnable {
 			MainView.updateStatusText("Total BLC: "+amount[0]);
 			if(MainView.getHelp()==true){
 				MainView.updateStatusText("All data loaded, type \"help\" for help");
-				MainView.updateStatusText("-------------------------------------");
 				MainView.setHelp(false);
 			}
 			
