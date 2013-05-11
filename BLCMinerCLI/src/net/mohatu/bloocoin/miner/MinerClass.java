@@ -97,7 +97,6 @@ public class MinerClass implements Runnable {
 		int limit = 5;
 		StringBuffer buf = new StringBuffer();
 
-		buf.append(chars.charAt(r.nextInt(26)));
 		for (int i = 0; i < limit; i++) {
 			buf.append(chars.charAt(r.nextInt(chars.length())));
 		}
