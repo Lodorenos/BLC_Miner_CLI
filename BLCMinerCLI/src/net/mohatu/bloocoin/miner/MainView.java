@@ -33,7 +33,7 @@ public class MainView {
 	private static String addr = "";
 	private static String key = "";
 	private static int solved = 0;
-	private static final String url = "bloocoin.zapto.org";
+	private static final String url = "server.bloocoin.org";
 	private static final int port = 3122;
 	private static long startTime = System.nanoTime();
 	private static int threads = 5;
@@ -82,6 +82,26 @@ public class MainView {
 			mining = false;
 			isMining = false;
 			updateStatusText("Mining stopped");
+			mainLoop();
+			break;
+		case "fromlist":
+			Thread slc = new Thread(new SubmitListClass());
+			slc.start();
+			mainLoop();
+			break;
+		case "send":
+			updateStatusText("Send to whom? :");
+			String to = new String(scan.next());
+			updateStatusText("How much? :");
+			int amt = scan.nextInt();
+			updateStatusText("Send " + amt + " to " + to + "? (true/false)");
+			if(scan.nextBoolean()==true){
+				Thread sc = new Thread(new SendClass(to, amt));
+				sc.start();
+				updateStatusText(amt + "BLC sent to " + to + ".");
+			}else{
+				updateStatusText("Transaction failed!");
+			}
 			mainLoop();
 			break;
 		case "setthreads":

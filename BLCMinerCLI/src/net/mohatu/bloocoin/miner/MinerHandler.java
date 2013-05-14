@@ -22,7 +22,7 @@ public class MinerHandler implements Runnable {
 	public void run() {
 		MainView.updateStatusText("\n" + MainView.getThreads() + " threads started.");
 		for (int i = 0; i < MainView.getThreads(); i++) {
-			Thread miner = new Thread(new MinerClass(7));
+			Thread miner = new Thread(new MinerClass(8));
 			miner.start();
 		}
 	}
